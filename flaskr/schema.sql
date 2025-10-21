@@ -12,3 +12,4 @@ INSERT INTO blogs (id,title, body, user_name)
 VALUES (1,'ごはん日記', 'お昼はカルボナーラ', 'yuki'),
 (2,'好きな曲リスト', 'インフェルノ/ Mrs.Gただ君に晴れ/ヨルシカ', 'mai'),
 (3, '気になる本', 'ファッション・パーツ図鑑', 'yuki');
+
