@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, redirect, url_for
+from flask import Blueprint, render_template, request, redirect, url_for, flash
 from flaskr import db
 # models.pyのBlogクラスをインポート
 from flaskr.models import Blog
@@ -21,6 +21,15 @@ def create():
 
         # Blogインスタンスを作成
         new_blog = Blog(title=title, body=body, user_name=user_name)
+        # バリデーションを実行
+        errors = new_blog.validate()
+
+        # エラーがあればフォームに戻して表示する
+        if errors:
+            # エラーのリストの要素一つずつをflushに入れている
+            for e in errors:
+                flash(e, 'error')
+            return render_template('blogs/new.html', title=title, body=body, user_name=user_name)
         # DBへ保存
         db.session.add(new_blog)
         db.session.commit()
