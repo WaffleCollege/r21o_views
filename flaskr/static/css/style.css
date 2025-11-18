@@ -1,0 +1,87 @@
+/* 全体の色設定（カスタムも簡単） */
+:root {
+  --bg: #FFF9FB;
+  --card-bg: #FFFFFF;
+  --text: #5c5c5c;
+  --accent: #FFB7D5;   /* ピンク */
+  --accent2: #A3D8F4;  /* 水色 */
+  --accent3: #C4FBC6;  /* みint系 */
+  --radius: 14px;
+}
+
+/* ページ背景とフォント */
+body {
+  font-family: "Comic Sans MS", "Hiragino Maru Gothic ProN", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  margin: 0;
+  padding: 0;
+  line-height: 1.7;
+}
+
+/* ヘッダー */
+header {
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  padding: 18px 25px;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  font-size: 1.4rem;
+  border-bottom: 4px solid var(--accent3);
+}
+
+/* ブログリストや本文カード */
+.card {
+  background: var(--card-bg);
+  margin: 18px;
+  padding: 20px;
+  border-radius: var(--radius);
+  border: 2px dashed var(--accent2);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* タイトル */
+.card h2, h1 {
+  color: var(--accent);
+  margin-top: 0;
+}
+
+/* ボタン */
+button, .btn {
+  background: var(--accent);
+  border: none;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: var(--radius);
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+button:hover, .btn:hover {
+  background: var(--accent2);
+}
+
+/* リンク */
+a {
+  color: var(--accent2);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* 引用（blockquote）もかわいく */
+blockquote {
+  background: var(--accent3);
+  padding: 12px;
+  border-left: 6px solid var(--accent);
+  border-radius: var(--radius);
+}
+
+/* レスポンシブ（スマホ優先） */
+@media (min-width: 780px) {
+  .container {
+    width: 720px;
+    margin: auto;
+  }
+}
